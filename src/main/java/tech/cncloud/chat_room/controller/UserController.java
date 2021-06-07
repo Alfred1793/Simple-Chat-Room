@@ -22,4 +22,9 @@ public class UserController {
 
         return result;
     }
+    @RequestMapping("/getUsername")
+    public String getUsername(HttpSession session){
+        String username =(String)session.getAttribute("user");
+        return username;
+    }
 }
