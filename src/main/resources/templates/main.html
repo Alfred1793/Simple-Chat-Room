@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  var username;
+  $(function(){
+    $.ajax({
+      url:"getUsername",
+      success:function(res){
+        username=res;
+        $("#userName").html("用户："+res+"<span style='float: right;color:green'>在线</span>");
+      },
+      async:false
+    });
+  });
+</script>
+</html>
