@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-@ServerEndpoint("/chat")
+@ServerEndpoint(value = "/chat",configurator = GetHttpSessionConfigurator.class)
 @Component
 public class ChatEndpoint {
 
