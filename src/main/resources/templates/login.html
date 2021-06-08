@@ -1,43 +1,71 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en" >
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="UTF-8">
+    <title></title>
 
-    <title>Signin Template for Bootstrap</title>
+    <!--图标库 可无视-->
+    <link rel='stylesheet' href='/css/font-awesome.min.css'>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/signin.css" rel="stylesheet">
+    <!--核心样式-->
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
-
 <body>
 
 <div class="container">
+    <div class="card"></div>
+    <div class="card">
+        <h1 class="title">用户登录</h1>
+        <form id="loginForm" method="post">
+            <div class="input-container">
+                <input type="text" name="user" required="required" />
+                <label for="#{label}">用户名</label>
+                <div class="bar"></div>
+            </div>
+            <div class="input-container">
+                <input type="password" name="pwd" required="required" />
+                <label for="#{label}">密码</label>
+                <div class="bar"></div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="btn"><span>登录</span></button>
+            </div>
+            <div><p style="color: red;text-align: center" id="err_msg"></p></div>
+        </form>
+    </div>
+    <div class="card alt">
+        <div class="toggle"></div>
+        <h1 class="title">会员注册
+            <div class="close"></div>
+        </h1>
+        <form>
+            <div class="input-container">
+                <input type="#{type}" id="#{label}" required="required" />
+                <label for="#{label}">用户名</label>
+                <div class="bar"></div>
+            </div>
+            <div class="input-container">
+                <input type="#{type}" id="#{label}" required="required" />
+                <label for="#{label}">密码</label>
+                <div class="bar"></div>
+            </div>
+            <div class="input-container">
+                <input type="#{type}" id="#{label}" required="required" />
+                <label for="#{label}">确认密码</label>
+                <div class="bar"></div>
+            </div>
+            <div class="button-container">
+                <button><span>提交注册</span></button>
+            </div>
+        </form>
+    </div>
+</div>
 
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-
-</div> <!-- /container -->
 <script src='/js/jquery.min.js'></script>
 <script src="/js/script.js"></script>
+<div style="text-align:center;">
+</div>
 </body>
 </html>
+
