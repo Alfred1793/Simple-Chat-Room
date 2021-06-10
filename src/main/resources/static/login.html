@@ -1,71 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <title></title>
+<!doctype html>
+<html lang="cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!--图标库 可无视-->
-    <link rel='stylesheet' href='/css/font-awesome.min.css'>
+    <title>登陆聊天室</title>
 
-    <!--核心样式-->
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="/css/signin.css" rel="stylesheet">
+  </head>
 
-</head>
-<body>
+  <body>
 
-<div class="container">
-    <div class="card"></div>
-    <div class="card">
-        <h1 class="title">用户登录</h1>
-        <form id="loginForm" method="post">
-            <div class="input-container">
-                <input type="text" name="user" required="required" />
-                <label for="#{label}">用户名</label>
-                <div class="bar"></div>
-            </div>
-            <div class="input-container">
-                <input type="password" name="pwd" required="required" />
-                <label for="#{label}">密码</label>
-                <div class="bar"></div>
-            </div>
-            <div class="button-container">
-                <button type="button" id="btn"><span>登录</span></button>
-            </div>
-            <div><p style="color: red;text-align: center" id="err_msg"></p></div>
-        </form>
+    <div class="container">
+
+      <form class="form-signin" id="loginForm" method="post">
+        <h2 class="form-signin-heading">请输入账号信息</h2>
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="email" id="inputName" class="form-control" name="user" placeholder="用户名" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="密码" required>
+        <button class="btn btn-lg btn-primary btn-block" id="btn" type="button">Sign in</button>
+      </form>
+
     </div>
-    <div class="card alt">
-        <div class="toggle"></div>
-        <h1 class="title">会员注册
-            <div class="close"></div>
-        </h1>
-        <form>
-            <div class="input-container">
-                <input type="#{type}" id="#{label}" required="required" />
-                <label for="#{label}">用户名</label>
-                <div class="bar"></div>
-            </div>
-            <div class="input-container">
-                <input type="#{type}" id="#{label}" required="required" />
-                <label for="#{label}">密码</label>
-                <div class="bar"></div>
-            </div>
-            <div class="input-container">
-                <input type="#{type}" id="#{label}" required="required" />
-                <label for="#{label}">确认密码</label>
-                <div class="bar"></div>
-            </div>
-            <div class="button-container">
-                <button><span>提交注册</span></button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="/js/script.js"></script>
-<div style="text-align:center;">
-</div>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
-
