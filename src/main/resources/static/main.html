@@ -8,23 +8,23 @@
 </head>
 <style>
     #contains{
-        background-color: pink;
+        background-color: #e0e0e0;
         width: 1000px;
         height: 700px;
         margin: auto;
     }
     #username{
-        background-color: powderblue;
+        background-color: rgb(128, 255, 240);
         width: 1000px;
         height: 30px;
     }
     #Inchat{
-        background-color: rgb(5, 130, 146);
+        background-color: powderblue;
         width: 1000px;
         height: 30px;
     }
     #left{
-        background-color: salmon;
+        background-color: #d2d2d2;
         width: 700px;
         height: 640px;
         float: left;
@@ -37,8 +37,11 @@
         /*display: none;*/
         visibility: hidden;
     }
+    #input_text{
+        background-color: #dedede;
+    }
     #right{
-        background-color: rgb(107, 3, 3);
+        background-color: powderblue;
         width: 300px;
         height: 640px;
         float: right;
@@ -79,7 +82,7 @@
     }
 </style>
 <body>
-<div id = "contains">
+<div id = "contains" >
     <div id="username"><h3 style="text-align: center;">用户：张三<span>-在线</span></h3></div>
     <div id="Inchat"></div>
     <div id="left">
@@ -94,7 +97,10 @@
     <div id="right">
         <p id="hy" style="text-align: center;">好友列表</p>
         <div id="hyList">
-
+            <ul class="rel-list unselect" id="user-list">
+                <li class="rel-item"><a onclick='showChat("张三")'>张三</a></li>
+                <li class="rel-item"><a onclick='showChat("李四")'>李四</a></li>
+            </ul>
         </div>
         <p id="xt" style="text-align: center">系统消息</p>
         <div id="xtList">
