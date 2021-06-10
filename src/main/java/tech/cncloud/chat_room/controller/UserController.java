@@ -10,11 +10,13 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class UserController {
     @RequestMapping("/login")
-    public Result login(User user, HttpSession session){
+    public Result login(String user, String pwd, HttpSession session){
         Result result=new Result();
-        if(user!=null && "123".equals(user.getPassword())){
+        System.out.println(user);
+        System.out.println(pwd);
+        if(user!=null && "123".equals(pwd)){
             result.setFlag(true);
-            session.setAttribute("user",user.getUsername());
+            session.setAttribute("user",user);
         }else{
             result.setFlag(false);
             result.setMessage("登录失败");
