@@ -1,6 +1,8 @@
 package tech.cncloud.chat_room.ws;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
+import tech.cncloud.chat_room.pojo.Message;
 import tech.cncloud.chat_room.utils.MessageUtils;
 
 import javax.servlet.http.HttpSession;
@@ -55,7 +57,18 @@ public class ChatEndpoint {
     @OnMessage
     //接收到客户端发送的数据时被调用
     public void onMessage(String message,Session session){
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            Message mess = mapper.readValue(message,Message.class);
 
+            String toName = mess.getToName();
+            String data =mess.getMessage();
+            String username=(String) httpSession.getAttribute("user");
+            String resultMessage =MessageUtils.getMessage(false,username,data);
+            onlineUsers.get(toName).session.getBasicRemote().sendText(resultMessage);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @OnClose
