@@ -1,0 +1,95 @@
+body{
+    background-image:url(../images/Maldives.jpg);
+    background-color: #5bc0de;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#contains{
+    background-color: white;
+    width: 1000px;
+    height: 740px;
+    margin: auto;
+    filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+    border-radius:20px;
+}
+#username{
+    background-color: rgb(40, 40, 40);
+    width: 1000px;
+    height: 80px;
+    border-radius:20px 20px 0 0;
+    line-height: 80px;
+    text-align:center;
+    color: white;
+}
+#left{
+    background-color: white;
+    width: 699px;
+    height: 660px;
+    float: left;
+    position: relative;
+    border-radius:0 0 0 20px;
+    border-right:1px solid #000
+}
+#content{
+    background-color: white;
+    width: 699px;
+    height: 400px;
+    /*display: none;*/
+    visibility: hidden;
+}
+#input_text{
+    background-color: white;
+}
+#right{
+    background-color: #959595;
+    width: 300px;
+    height: 640px;
+    float: right;
+}
+#hyList{
+    height: 270px;
+    overflow-y: scroll;
+    background: white;
+}
+#xtList{
+    height: 270px;
+    overflow-y: scroll;
+    background: white;
+}
+#input{
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    border-top:1px solid #000;
+    border-radius:0 0 0 20px;
+}
+#mes_left{
+    float: left;
+    border: 2px aqua;
+    max-width: 490px;
+}
+#mes_right{
+    float: right;
+    border: 2px aqua;
+    max-width: 490px;
+}
+#hy{
+    height: 35px;
+    width: auto;
+}
+#xt{
+    height: 35px;
+    width: auto;
+}
+textarea {
+    resize: none;
+    border: none;
+    outline: none
+}
+#submit{
+    height: 30px;
+    width: 60px;
+    background-color: #959595;
+}
