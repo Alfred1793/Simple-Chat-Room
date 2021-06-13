@@ -98,13 +98,16 @@
         <p id="hy" style="text-align: center;">好友列表</p>
         <div id="hyList">
             <ul class="rel-list unselect" id="user-list">
-                <li class="rel-item"><a onclick='showChat("张三")'>张三</a></li>
-                <li class="rel-item"><a onclick='showChat("李四")'>李四</a></li>
+<!--                <li class="rel-item"><a onclick='showChat("aaa")'>aaa</a></li>-->
+<!--                <li class="rel-item"><a onclick='showChat("aaa")'>aaa</a></li>-->
             </ul>
         </div>
         <p id="xt" style="text-align: center">系统消息</p>
         <div id="xtList">
-
+            <ul class="rel-list unselect" id="broadcast">
+                <!--                <li class="rel-item"><a onclick='showChat("aaa")'>aaa</a></li>-->
+                <!--                <li class="rel-item"><a onclick='showChat("aaa")'>aaa</a></li>-->
+            </ul>
         </div>
     </div>
 </div>
@@ -143,6 +146,7 @@
         }
         //接受消息
         ws.onmessage = function (evt) {
+            console.log("onmessage");
             //获取服务端推送的消息
             var dataStr = evt.data;
             //将dataStr转换为json对象
@@ -150,6 +154,7 @@
 
             //判断是否是系统消息
             if(res.system){
+                console.log("isSystem");
                 //系统消息
                 //1.好友列表展示
                 //2.系统广播的展示
@@ -157,22 +162,20 @@
                 var names = res.message;
                 var userlistStr = "";
                 var broadcastListStr = "";
-                var temp01 = "<a style=\"text-align: center; display: block;\" onclick='showChat(\"";
-                var temp03 = "\")'>";
-                var temp04 = "</a></br>";
-                var temp = "";
                 for (var name of names){
+                    console.log(name);
                     if (name != username){
-                        temp = temp01 + name + temp03 + name + temp04;
+                        temp = "<li className=\"rel-item\"><a onClick='showChat(\""+name+"\")'>"+name+"</a></li>"
                         userlistStr = userlistStr + temp;
                         broadcastListStr += "<p style='text-align: center'>"+ name +"上线了</p>";
                     }
                 }
                 //渲染好友列表和系统广播
-                $("#hyList").html(userlistStr);
-                $("#xtList").html(broadcastListStr);
+                $("#user-list").html(userlistStr);
+                $("#broadcast").html(broadcastListStr);
 
             }else {
+                console.log("isnotSystem");
                 //不是系统消息
                 var str = "<span id='mes_left'>"+ res.message +"</span></br>";
                 if (toName === res.fromName) {

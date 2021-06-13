@@ -33,6 +33,8 @@ public class ChatEndpoint {
         onlineUsers.put(username,this);
 
         String message = MessageUtils.getMessage(true,null,getNames());
+
+        broadcastAllUsers(message);
     }
 
     private void broadcastAllUsers(String message){
