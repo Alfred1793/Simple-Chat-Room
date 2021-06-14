@@ -1,0 +1,38 @@
+body{
+    background-color: #ffffff;
+}
+
+.container{
+    padding: 0px 0px 0px 0px;
+}
+#username{
+    background-color: rgb(40, 40, 40);
+    height: 50px;
+    border-radius:10px 10px 0 0;
+    line-height: 50px;
+    text-align:center;
+    color: white;
+}
+#hyList{
+    height: 250px;
+    overflow-y: scroll;
+    background: white;
+}
+#xtList{
+    height: 150px;
+    overflow-y: scroll;
+    background: white;
+}
+
+#hy{
+    height: 25px;
+    width: auto;
+}
+#xt{
+    height: 25px;
+    width: auto;
+}
+.list{
+    background-color: #959595;
+    padding: 1px 0px 0px 0px;
+}
