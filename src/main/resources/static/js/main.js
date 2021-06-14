@@ -6,7 +6,7 @@ function showChat(name){
     //现在聊天框
     $("#content").html("");
     $("#content").css("visibility","visible");
-    $("#Inchat").html("当前正与"+toName+"聊天");
+    $("#Inchat").html("<p style=\"text-align: center;font-weight: 400;\">与用户"+toName+"聊天</p>");
     //从sessionStorage中获取历史信息
     var chatData = sessionStorage.getItem(toName);
     if (chatData != null){

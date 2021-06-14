@@ -36,3 +36,31 @@ body{
     background-color: #959595;
     padding: 1px 0px 0px 0px;
 }
+
+#content{
+    background-color: white;
+    overflow-y: scroll;
+    height: 100px;
+    width: auto;
+}
+
+#input{
+    height: 50px;
+    width: auto;
+}
+
+#submit{
+    height: 30px;
+    width: 60px;
+    background-color: #959595;
+}
+
+#mes_left{
+    float: left;
+    border: 2px aqua;
+    max-width: 490px;
+}
+#mes_right{
+    float: right;
+    border: 2px aqua;
+    max-width: 490px;
