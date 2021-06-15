@@ -36,6 +36,7 @@ body{
     background-color: white;
     width: 699px;
     height: 400px;
+    overflow-y: scroll;
     /*display: none;*/
     visibility: hidden;
 }
@@ -92,4 +93,40 @@ textarea {
     height: 30px;
     width: 60px;
     background-color: #959595;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.right .message {
+    margin-right: 10px;
+}
+.left .message{
+    margin-left: 10px;
+}
+
+.header-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+}
+
+.message {
+    border-radius: 10px;
+    display: flex;
+    background: #efefef;
+    min-height: 25px;
+    padding: 9px 10px;
+    align-items: center;
+    color: #222121;
 }

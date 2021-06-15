@@ -10,6 +10,7 @@ function showChat(name){
     //从sessionStorage中获取历史信息
     var chatData = sessionStorage.getItem(toName);
     if (chatData != null){
+        //将内容渲染到聊天区
         $("#content").html(chatData);
     }
 }
@@ -61,7 +62,12 @@ $(function () {
         }else {
             console.log("isnotSystem");
             //不是系统消息
-            var str = "<span id='mes_left'>"+ res.message +"</span></br>";
+            var str="<div class=\"item left\">" +
+                "<img class=\"header-img\" src=\"images/head.png\" />\n" +
+                "<span class=\"message\">"
+                + res.message +
+                "</span>" +
+                "</div>"
             if (toName === res.fromName) {
                 $("#content").append(str);
             }
@@ -85,11 +91,17 @@ $(function () {
         $("#input_text").val("");
         var json = {"toName": toName ,"message": data};
         //将数据展示在聊天区
-        var str = "<span id='mes_right'>"+ data +"</span></br>";
+        var str = "<div class=\"item right\">" +
+            "<img class=\"header-img\" src=\"images/head.png\" />" +
+            "<span class=\"message\">" +
+            data +
+            "</span>" +
+            "</div>";
         $("#content").append(str);
-
+        //可能之前已经有数据了所以得先获取
         var chatData = sessionStorage.getItem(toName);
         if (chatData != null){
+            //追加
             str = chatData + str;
         }
         sessionStorage.setItem(toName,str);
