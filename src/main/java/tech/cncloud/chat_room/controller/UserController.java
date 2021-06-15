@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class UserController {
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://rm-bp1t3q5a46n1fhf961250101m.mysql.rds.aliyuncs.com:3306/chat_room";
     static final String USER = "software";
     static final String PASS = "nbu-18CS";
@@ -34,7 +34,7 @@ public class UserController {
             System.out.println(" 实例化Statement对象...");
             stmt = conn.createStatement();
             String sql;
-            sql = "select * from user where username='"+user+"' && passward='"+pwd+"'";
+            sql = "select * from user where username='"+user+"' && password='"+pwd+"'";
             ResultSet rs = stmt.executeQuery(sql);
 
             // 展开结果集数据库
@@ -73,6 +73,57 @@ public class UserController {
 
         return result;
     }
+
+    @RequestMapping("/regis")
+    public Result regis(String user,String email,String pwd, HttpSession session){
+        Result result=new Result();
+        System.out.println(user);
+        System.out.println(email);
+        System.out.println(pwd);
+
+        Connection conn = null;
+        Statement stmt = null;
+        try{
+            // 注册 JDBC 驱动
+            Class.forName(JDBC_DRIVER);
+            // 打开链接
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            // 执行查询
+            System.out.println(" 实例化Statement对象...");
+            stmt = conn.createStatement();
+            String sql;
+            sql = "insert into user(username,password,email) values('"+user+"','"+pwd+"','"+email+"')";
+            boolean rs = stmt.execute(sql);
+            result.setFlag(true);
+
+            // 完成后关闭
+            stmt.close();
+            conn.close();
+        }catch(SQLException se){
+            // 处理 JDBC 错误
+            result.setFlag(false);
+            se.printStackTrace();
+        }catch(Exception e){
+            // 处理 Class.forName 错误
+            e.printStackTrace();
+        }finally{
+            // 关闭资源
+            try{
+                if(stmt!=null) stmt.close();
+            }catch(SQLException se2){
+            }// 什么都不做
+            try{
+                if(conn!=null) conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }
+        }
+        System.out.println("Goodbye!");
+
+        return result;
+    }
+
     @RequestMapping("/getUsername")
     public String getUsername(HttpSession session){
         String username =(String)session.getAttribute("user");

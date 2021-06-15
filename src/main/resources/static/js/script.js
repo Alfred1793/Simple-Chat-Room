@@ -12,6 +12,9 @@ $(function(){
             }
         },"json");
     });
+    $("#btn2").click(function (){
+        window.location.href = 'regis.html';
+    });
 })
 
 var redirect = () => {
