@@ -68,8 +68,11 @@ $(function () {
                 + res.message +
                 "</span>" +
                 "</div>"
+            temp = "<li className=\"rel-item\"><a onClick='showChat(\""+res.fromName+"\")'>您收到一条来自"+res.fromName+"的消息</li>"
             if (toName === res.fromName) {
                 $("#content").append(str);
+            }else{
+                $("#broadcast").append(temp);
             }
             var chatData = sessionStorage.getItem(res.fromName);
             if (chatData != null){
