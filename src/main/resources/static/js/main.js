@@ -83,6 +83,12 @@ $(function () {
         $("#username").html("<h3 style=\"text-align: center;\">用户："+ username +"<span>-离线</span></h3>");
     }
 
+    $(document).keydown(function(e){
+        if(e.keyCode==13){
+            $("#submit").click();
+        }
+    });
+
     //发送消息
     $("#submit").click(function () {
         //1.获取输入的内容
