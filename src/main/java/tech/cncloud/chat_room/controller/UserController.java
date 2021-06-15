@@ -96,6 +96,7 @@ public class UserController {
             sql = "insert into user(username,password,email) values('"+user+"','"+pwd+"','"+email+"')";
             boolean rs = stmt.execute(sql);
             result.setFlag(true);
+            result.setMessage("注册成功");
 
             // 完成后关闭
             stmt.close();
@@ -103,6 +104,7 @@ public class UserController {
         }catch(SQLException se){
             // 处理 JDBC 错误
             result.setFlag(false);
+            result.setMessage("注册失败");
             se.printStackTrace();
         }catch(Exception e){
             // 处理 Class.forName 错误
