@@ -1,5 +1,4 @@
 body{
-    background-image:url(../images/Maldives_for_phone.jpg);
     background-color: #5bc0de;
     background-size: cover;
     background-repeat: no-repeat;
@@ -51,7 +50,7 @@ body{
 #content{
     background-color: white;
     overflow-y: scroll;
-    height: 350px;
+    height: 300px;
     width: auto;
 }
 
