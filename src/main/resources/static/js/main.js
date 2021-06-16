@@ -40,10 +40,12 @@ $(function () {
         //判断是否是系统消息
         if(res.system){
             console.log("isSystem");
-            //系统消息{"isSystem":true,"fromName":null,"message":["xxx","xxxx"]}
+            //系统消息{"isSystem":true,"fromName":xxx,"message":["xxx","xxxx"]}
             //1.好友列表展示
             //2.系统广播的展示
             //此处声明的变量是调试时命名的，可以直接合并
+
+
             var names = res.message;
             var userlistStr = "";
             var broadcastListStr = "";
@@ -52,12 +54,10 @@ $(function () {
                 if (name != username){
                     temp = "<li className=\"rel-item\"><a onClick='showChat(\""+name+"\")'>"+name+"</a></li>"
                     userlistStr = userlistStr + temp;
-                    broadcastListStr += "<p style='text-align: center'>"+ name +"上线了</p>";
                 }
             }
             //渲染好友列表和系统广播
             $("#user-list").html(userlistStr);
-            $("#broadcast").html(broadcastListStr);
             $("#xtList").scrollTop($("#xtList")[0].scrollHeight);
 
         }else {
