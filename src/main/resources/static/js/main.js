@@ -40,7 +40,7 @@ $(function () {
         //判断是否是系统消息
         if(res.system){
             console.log("isSystem");
-            //系统消息
+            //系统消息{"isSystem":true,"fromName":null,"message":["xxx","xxxx"]}
             //1.好友列表展示
             //2.系统广播的展示
             //此处声明的变量是调试时命名的，可以直接合并
@@ -62,7 +62,7 @@ $(function () {
 
         }else {
             console.log("isnotSystem");
-            //不是系统消息
+            //不是系统消息{"isSystem":false,"fromName":xxx,"message":"hello"}
             var str="<div class=\"item left\">" +
                 "<img class=\"header-img\" src=\"images/head.png\" />\n" +
                 "<span class=\"message\">"

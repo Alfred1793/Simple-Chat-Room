@@ -73,7 +73,10 @@ public class ChatEndpoint {
 
     @OnClose
     //链接关闭时被调用
-    public void onClose(Session sessio){
-
+    public void onClose(Session session){
+        String username = (String) httpSession.getAttribute("user");
+        onlineUsers.remove(username);
+        String message =MessageUtils.getMessage(true,null,getNames());
+        broadcastAllUsers(message);
     }
 }
