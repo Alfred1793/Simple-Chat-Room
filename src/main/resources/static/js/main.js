@@ -71,6 +71,7 @@ $(function () {
             temp = "<li className=\"rel-item\"><a onClick='showChat(\""+res.fromName+"\")'>您收到一条来自"+res.fromName+"的消息</li>"
             if (toName === res.fromName) {
                 $("#content").append(str);
+                $("#content").scrollTop($("#content")[0].scrollHeight);
             }else{
                 $("#broadcast").append(temp);
             }
@@ -107,6 +108,7 @@ $(function () {
             "</span>" +
             "</div>";
         $("#content").append(str);
+        $("#content").scrollTop($("#content")[0].scrollHeight);
         //可能之前已经有数据了所以得先获取
         var chatData = sessionStorage.getItem(toName);
         if (chatData != null){
