@@ -58,6 +58,7 @@ $(function () {
             //渲染好友列表和系统广播
             $("#user-list").html(userlistStr);
             $("#broadcast").html(broadcastListStr);
+            $("#xtList").scrollTop($("#xtList")[0].scrollHeight);
 
         }else {
             console.log("isnotSystem");
@@ -74,6 +75,7 @@ $(function () {
                 $("#content").scrollTop($("#content")[0].scrollHeight);
             }else{
                 $("#broadcast").append(temp);
+                $("#xtList").scrollTop($("#xtList")[0].scrollHeight);
             }
             var chatData = sessionStorage.getItem(res.fromName);
             if (chatData != null){
